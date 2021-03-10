@@ -1,0 +1,85 @@
+
+<div class="row mb-3">
+    <div class="col-6 themed-grid-col">
+        <div class="dropend">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropendMenuButton"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Type
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropendMenuButton">
+                <li class="dropdown-item" *ngFor="let a of houseTypes" [class.selected]="a === houseFeature.houseType"
+                    (click)="selectHouseType(a)"> <span>{{a}}</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="col-6  themed-grid-col"><input maxlength="10" size="10" [(ngModel)]="houseFeature.houseType"
+            placeholder="SFH" /></div>
+</div>
+<div class="row mb-3">
+    <div class="col-6 themed-grid-col">
+        <div class="dropend">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropendZipButton"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Zip
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropendZipButton">
+                <li class="dropdown-item" *ngFor="let a of houseZipCodes" [class.selected]="a === houseFeature.area"
+                    (click)="selectHouseZipCode(a)"> <span>{{a}}</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="col-6  themed-grid-col"><input maxlength="10" size="10" [(ngModel)]="houseFeature.area"
+            placeholder="60076" /></div>
+</div>
+<div class="row mb-3">
+    <div class="col-6 themed-grid-col">Rooms</div>
+    <div class="col-6  themed-grid-col"><input maxlength="2" size="4" [(ngModel)]="houseFeature.rooms"
+            placeholder="7" /></div>
+</div>
+<div class="row mb-3">
+    <div class="col-6 themed-grid-col">Beds</div>
+    <div class="col-6  themed-grid-col"><input maxlength="2" size="4" [(ngModel)]="houseFeature.bedRooms"
+            placeholder="3" /></div>
+</div>
+<div class="row mb-3">
+    <div class="col-6 themed-grid-col">Bsmnt Beds</div>
+    <div class="col-6  themed-grid-col"><input maxlength="2" size="4" [(ngModel)]="houseFeature.bedRoomsBsmt"
+            placeholder="0.0" /></div>
+</div>
+<div class="row mb-3">
+    <div class="col-6 themed-grid-col">Full baths</div>
+    <div class="col-6  themed-grid-col"><input maxlength="2" size="4" [(ngModel)]="houseFeature.fullBath"
+            placeholder="2" /></div>
+</div>
+<div class="row mb-3">
+    <div class="col-6 themed-grid-col">Half baths</div>
+    <div class="col-6  themed-grid-col"><input maxlength="2" size="4" [(ngModel)]="houseFeature.halfBath"
+            placeholder="0" /></div>
+</div>
+<div class="row mb-3">
+    <div class="col-6 themed-grid-col">Square feet</div>
+    <div class="col-6  themed-grid-col"><input maxlength="5" size="10"
+            [(ngModel)]="houseFeature.approxSquFeet" placeholder="1400" />
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col-6 themed-grid-col">Garage spaces</div>
+    <div class="col-6  themed-grid-col"><input maxlength="2" size="4" [(ngModel)]="houseFeature.garageSpaces"
+            placeholder="2" /></div>
+</div>
+<div class="row mb-3">
+    <div class="col-6 themed-grid-col">Parking spaces</div>
+    <div class="col-6  themed-grid-col"><input maxlength="2" size="4"
+            [(ngModel)]="houseFeature.parkingSpaces" placeholder="0" /></div>
+</div>
+<div class="row mb-3">
+    <div class="col-6 themed-grid-col"><button md-button (click)="getPredictedPrice()">Get
+            Price</button></div>
+    <div class="col-6  themed-grid-co"><input maxlength="8" size="10" [(ngModel)]="housePrice"
+            placeholder="000000000.0" /></div>
+
+</div>
